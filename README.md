@@ -1,3 +1,3 @@
 # efeitoMatrixJS
 
-![](captures\matrixjs.jpg)
+![](https://raw.githubusercontent.com/tecnobert/efeitoMatrixJS/master/captures/matrixjs.jpg)
