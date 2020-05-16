@@ -1,10 +1,10 @@
 let canvas = document.getElementById("matrix");
-let campoCanvas = canvas.getContext("2d");
+let fieldCanvas = canvas.getContext("2d");
 let canvas2 = document.getElementById("matrix2");
-let campoCanvas2 = canvas2.getContext("2d");
-let larguraTotal = window.innerWidth;
-let alturaTotal = window.innerHeight;
-let caracteres = [
+let fieldCanvas2 = canvas2.getContext("2d");
+let overallWidth = window.innerWidth;
+let totalHeight = window.innerHeight;
+let characters = [
   "a",
   "b",
   "c",
@@ -34,12 +34,12 @@ let caracteres = [
   "y",
   "z",
 ];
-let maximoDeCaracteres = 50;
-let fallingcaracteres = [];
-let tamanhoDaFonte = 10.5;
-maximoDeColunas = larguraTotal / tamanhoDaFonte;
-canvas.width = canvas2.width = larguraTotal;
-canvas.height = canvas2.height = alturaTotal;
+let maximumOfCharacters = 50;
+let fallingcharacters = [];
+let fontSize = 10.5;
+MaximumColumns = overallWidth / fontSize;
+canvas.width = canvas2.width = overallWidth;
+canvas.height = canvas2.height = totalHeight;
 
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -54,43 +54,43 @@ function Point(x, y) {
   this.y = y;
 }
 
-Point.prototype.draw = function (campoCanvas) {
-  this.value = caracteres[randomInt(0, caracteres.length - 1)].toUpperCase();
+Point.prototype.draw = function (fieldCanvas) {
+  this.value = characters[randomInt(0, characters.length - 1)].toUpperCase();
   this.speed = randomFloat(1, 5);
 
-  campoCanvas2.fillStyle = "rgba(255,255,255,0.8)";
-  campoCanvas2.font = tamanhoDaFonte + "px san-serif";
-  campoCanvas2.fillText(this.value, this.x, this.y);
+  fieldCanvas2.fillStyle = "rgba(255,255,255,0.8)";
+  fieldCanvas2.font = fontSize + "px san-serif";
+  fieldCanvas2.fillText(this.value, this.x, this.y);
 
-  campoCanvas.fillStyle = "#5900ff";
-  campoCanvas.font = tamanhoDaFonte + "px san-serif";
-  campoCanvas.fillText(this.value, this.x, this.y);
+  fieldCanvas.fillStyle = "#5900ff";
+  fieldCanvas.font = fontSize + "px san-serif";
+  fieldCanvas.fillText(this.value, this.x, this.y);
 
   this.y += this.speed;
-  if (this.y > alturaTotal) {
+  if (this.y > totalHeight) {
     this.y = randomFloat(-100, 0);
     this.speed = randomFloat(2, 5);
   }
 };
 
-for (let i = 0; i < maximoDeColunas; i++) {
-  fallingcaracteres.push(new Point(i * tamanhoDaFonte, randomFloat(-500, 0)));
+for (let i = 0; i < MaximumColumns; i++) {
+  fallingcharacters.push(new Point(i * fontSize, randomFloat(-500, 0)));
 }
 
-var atualizarPagina = function () {
-  campoCanvas.fillStyle = "#0000000d";
-  campoCanvas.fillRect(0, 0, larguraTotal, alturaTotal);
+var updatePage = function () {
+  fieldCanvas.fillStyle = "#0000000d";
+  fieldCanvas.fillRect(0, 0, overallWidth, totalHeight);
 
-  campoCanvas2.clearRect(0, 0, larguraTotal, alturaTotal);
+  fieldCanvas2.clearRect(0, 0, overallWidth, totalHeight);
 
-  var i = fallingcaracteres.length;
+  var i = fallingcharacters.length;
 
   while (i--) {
-    fallingcaracteres[i].draw(campoCanvas);
-    var v = fallingcaracteres[i];
+    fallingcharacters[i].draw(fieldCanvas);
+    var v = fallingcharacters[i];
   }
 
-  requestAnimationFrame(atualizarPagina);
+  requestAnimationFrame(updatePage);
 };
 
-atualizarPagina();
+updatePage();
