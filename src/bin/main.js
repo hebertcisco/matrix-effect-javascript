@@ -1,10 +1,10 @@
-const canvas = document.getElementById("canvas");
-const campoCanvas = canvas.getContext("2d");
-const canvas2 = document.getElementById("canvas2");
-const campoCanvas2 = canvas2.getContext("2d");
-const larguraTotal = window.innerWidth;
-const alturaTotal = window.innerHeight;
-const caracteres = [
+let canvas = document.getElementById("matrix");
+let campoCanvas = canvas.getContext("2d");
+let canvas2 = document.getElementById("matrix2");
+let campoCanvas2 = canvas2.getContext("2d");
+let larguraTotal = window.innerWidth;
+let alturaTotal = window.innerHeight;
+let caracteres = [
   "a",
   "b",
   "c",
@@ -32,11 +32,11 @@ const caracteres = [
   "w",
   "x",
   "y",
-  "z"
+  "z",
 ];
-const maximoDeCaracteres = 50;
-const fallingcaracteres = [];
-const tamanhoDaFonte = 10.5;
+let maximoDeCaracteres = 50;
+let fallingcaracteres = [];
+let tamanhoDaFonte = 10.5;
 maximoDeColunas = larguraTotal / tamanhoDaFonte;
 canvas.width = canvas2.width = larguraTotal;
 canvas.height = canvas2.height = alturaTotal;
@@ -54,7 +54,7 @@ function Point(x, y) {
   this.y = y;
 }
 
-Point.prototype.draw = function(campoCanvas) {
+Point.prototype.draw = function (campoCanvas) {
   this.value = caracteres[randomInt(0, caracteres.length - 1)].toUpperCase();
   this.speed = randomFloat(1, 5);
 
@@ -73,11 +73,11 @@ Point.prototype.draw = function(campoCanvas) {
   }
 };
 
-for (const i = 0; i < maximoDeColunas; i++) {
+for (let i = 0; i < maximoDeColunas; i++) {
   fallingcaracteres.push(new Point(i * tamanhoDaFonte, randomFloat(-500, 0)));
 }
 
-var atualizarPagina = function() {
+var atualizarPagina = function () {
   campoCanvas.fillStyle = "#0000000d";
   campoCanvas.fillRect(0, 0, larguraTotal, alturaTotal);
 
