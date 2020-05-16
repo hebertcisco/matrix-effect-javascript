@@ -1,5 +1,5 @@
 {
-  "name": "efeitomatrixjs",
+  "name": "matrix-effect",
   "version": "1.0.0",
   "description": "",
   "main": "bin/main.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tecnobert/efeitoMatrixJS.git"
+    "url": "git+https://github.com/tecnobert/matrix-effect-javascript.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tecnobert/efeitoMatrixJS/issues"
+    "url": "https://github.com/tecnobert/matrix-effect-javascript/issues"
   },
-  "homepage": "https://github.com/tecnobert/efeitoMatrixJS#readme"
+  "homepage": "https://github.com/tecnobert/matrix-effect-javascript#readme"
 }
