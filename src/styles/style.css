@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  background-image: url(../../assets/img/red-matrix-5031496_1920.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #0000000d;
+}
+.icon {
+  color: aliceblue;
+  width: 100px;
+  height: 100px;
+  font-size: 20pt;
+  position: relative;
+  margin-top: 10px;
+  float: right;
+}
+.icon::after, .icon:active .icon:focus{
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.445);
+}
