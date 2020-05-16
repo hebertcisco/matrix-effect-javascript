@@ -1,3 +1,6 @@
-# efeitoMatrixJS
+# Matrix effect made with JavaScript
 
-![](https://raw.githubusercontent.com/tecnobert/efeitoMatrixJS/master/captures/matrixjs.jpg)
+## Screenshot
+
+![Matrix effect made with JavaScript](captures/efeito-matrix-tecnobert.js.png)
+
