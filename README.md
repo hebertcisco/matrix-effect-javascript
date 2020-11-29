@@ -14,7 +14,7 @@ To install on your website is very simple:
 > 2. Add the script to your html.
 
 ```html
-<script src="https://tecnobert.github.io/matrix-effect-javascript/src/bin/main.js"></script>
+<script src="https://matrixeffect.now.sh/src/bin/main.js"></script>
 ```
 
 Now test and see if the matrix effect is running.
